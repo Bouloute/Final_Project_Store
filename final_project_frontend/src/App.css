@@ -29,12 +29,11 @@
 }
 
 
-.NavBar {
+.NavBarToDelete {
   color: #fff;
   letter-spacing: 0px;
   font-family: BlairMdITCTTMedium,Georgia, "Times New Roman", Times, serif;
   background: #646D27;
-  height: 255px;
 }
 
 .ppage {

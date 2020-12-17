@@ -5,9 +5,9 @@ import {connect} from "react-redux"
 import {loadProducts} from '../actions/products'
 
 class ProductContainer extends Component {
-    /*componentDidMount() {
+    componentDidMount() {
         this.props.loadProducts()
-    }*/
+    }
     
     renderProducts = () => {
         return this.props.products.map(product => <Product product={product}/>)
@@ -15,9 +15,7 @@ class ProductContainer extends Component {
 
     render() {
         return (
-            <div>
-                Product Container
-                <button onClick={this.props.loadProducts}>Load Products</button>
+            <div className="products">
                 {this.renderProducts()}
             </div>
         );

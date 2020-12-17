@@ -1,57 +1,41 @@
 import React, { Component } from 'react';
 
+import '../product.css';
+
 class product extends Component {
     render() {
         return (
-            <div class="product">
-                <div class="info-large">
-                    <h4>{this.props.product.title}</h4>
-                    <div class="sku">
-                        PRODUCT SKU: <strong>89356</strong>
+            <div class="wrapper">
+                <div class="container">
+                    <div class="top">
+                        <img src={this.props.product.img_url}></img>
                     </div>
-                    
-                    <div class="price-big">
-                        <span>${this.props.product.price}</span> ${this.props.product.price}
-                    </div>
-                    
-                    
-
-                    <h3>SIZE</h3>
-                    <div class="sizes-large">
-                        <span>200ml</span>
-                        <span>375ml</span>
-                    </div>
-                    
-                    <button class="add-cart-large">Add To Cart</button>                          
-                                
-                </div>
-                <div class="make3D">
-                <div class="product-front">
-                    <div class="shadow"></div>
-                    <img src={this.props.product.image} alt="" />
-                    <div class="image_overlay"></div>
-                    <div class="add_to_cart">Add to cart</div>
-                    <div class="view_gallery">View details</div>
-                    <div class="stats">        	
-                        <div class="stats-container">
-                            <span class="product_price">${this.props.product.price}</span>
-                            <span class="product_name">{this.props.product.title}</span>    
-                            <p>{this.props.product.category}</p>                                            
-                            
-                            <div class="product-options">
-                            <strong>SIZES</strong>
-                            <span>200ml, 375ml</span>
-                        </div>                       
-                        </div>                         
+                    <div class="bottom">
+                        <div class="left">
+                            <div class="details">
+                                <h1>{this.props.product.name}</h1>
+                                <p>{this.props.product.price}</p>
+                            </div>
+                            <div class="buy"><i class="material-icons">add_shopping_cart</i></div>
+                        </div>
+                        <div class="right">
+                            <div class="done"><i class="material-icons">done</i></div>
+                            <div class="details">
+                                <h1>Chair</h1>
+                                <p>Added to your cart</p>
+                            </div>
+                            <div class="remove"><i class="material-icons">clear</i></div>
+                        </div>
                     </div>
                 </div>
-                
-                <div class="product-back">
-                    <div class="shadow"></div>
-                    <p>details</p>
-                </div>	  
-            </div>	
-        </div>
+                <div class="inside">
+                    <div class="icon">
+                        <i class="material-icons">
+                            0
+                        </i>
+                        </div>
+                    </div>
+            </div>
         )
     }
 }

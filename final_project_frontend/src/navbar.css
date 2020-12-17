@@ -27,6 +27,7 @@
 }
 nav {
     float: right;
+    position: relative;
 }
 nav ul {
     list-style: none;
@@ -35,6 +36,7 @@ nav ul {
 }
 nav ul .main {
     margin-top: 170px;
+    position: relative;
 }
 
 nav ul li {
