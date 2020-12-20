@@ -7,7 +7,7 @@ const NavBar = () => {
     return (
         <div className="NavBar">
             <div className="brand">
-                <img src="http://www.virginandaged.com/content/images/logo.png" />
+                <img src="https://www.pinclipart.com/picdir/big/196-1961934_rugby-ball-clipart-outline-white-oval-shape-png.png" />
             </div>  
             <section className="navigation">
                 <div className="nav-container">
