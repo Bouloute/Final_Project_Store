@@ -8,15 +8,15 @@ class product extends Component {
             <div class="wrapper">
                 <div class="container">
                     <div class="top">
-                        <img src={this.props.product.img_url}></img>
+                        <img src={this.props.product.img_url} width="280px" height="300px"></img>
                     </div>
                     <div class="bottom">
                         <div class="left">
                             <div class="details">
                                 <h1>{this.props.product.name}</h1>
-                                <p>{this.props.product.price}</p>
+                                <p>${this.props.product.price}</p>
                             </div>
-                            <div class="buy"><i class="material-icons">add_shopping_cart</i></div>
+                            <div class="buy"></div>
                         </div>
                         <div class="right">
                             <div class="done"><i class="material-icons">done</i></div>
@@ -30,11 +30,16 @@ class product extends Component {
                 </div>
                 <div class="inside">
                     <div class="icon">
-                        <i class="material-icons">
-                            0
-                        </i>
-                        </div>
+                            0 
+                            {/* TODO: number of times in cart */}
                     </div>
+                    
+                    <div class="contents">
+                        <p>
+                            {this.props.product.description}
+                        </p>
+                    </div>
+                </div>
             </div>
         )
     }

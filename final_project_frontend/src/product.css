@@ -41,7 +41,7 @@
     transform: translateX(-50%);
 }
 .wrapper .container .bottom h1 {
-    size: 10px;
+    font-size: 15px;
     margin: 0;
     padding: 0;
 }
@@ -68,6 +68,9 @@
     background: #f1f1f1;
     transition: background 0.5s;
     border-left: solid thin rgba(0, 0, 0, 0.1);
+    background-image: url('https://visualpharm.com/assets/482/Shopping%20Cart-595b40b65ba036ed117d241c.svg');
+    background-repeat: no-repeat;
+    background-size: auto;
 }
 .wrapper .container .bottom .left .buy i {
     font-size: 30px;
@@ -77,6 +80,10 @@
 }
 .wrapper .container .bottom .left .buy:hover {
     background: #a6cdde;
+    
+    background-image: url('https://visualpharm.com/assets/482/Shopping%20Cart-595b40b65ba036ed117d241c.svg');
+    background-repeat: no-repeat;
+    background-size: auto;
 }
 .wrapper .container .bottom .left .buy:hover i {
     transform: translateY(5px);
