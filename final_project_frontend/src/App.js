@@ -17,8 +17,10 @@ class App extends Component {
           <NavBar />
           <Route exact path="/" render={() => <div>Home Page</div>} />
           <Route path='/products' render={routerProps => <ProductContainer></ProductContainer>} />
+          {/*<Route path='/cart' render={routerProps => <Cart cartItems={this.props.cartItems}></Cart>} />*/}
       </Router>
     );
   }
 }
+
 export default App;
