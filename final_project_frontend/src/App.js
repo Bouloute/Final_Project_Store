@@ -16,7 +16,9 @@ class App extends Component {
       <Router>
           <NavBar />
           <Route exact path="/" render={() => <div>Home Page</div>} />
-          <Route path='/products' render={routerProps => <ProductContainer></ProductContainer>} />
+          <Route path='/products' >
+            <ProductContainer/>
+          </Route>
           {/*<Route path='/cart' render={routerProps => <Cart cartItems={this.props.cartItems}></Cart>} />*/}
       </Router>
     );

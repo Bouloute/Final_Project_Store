@@ -20,7 +20,7 @@ const NavBar = () => {
                                     Home
                                 </NavLink>
                             </li>
-                            <li className="main" onFocus={dropDown} onBlur={dropUp}>
+                            <li className="main" >
                                 <NavLink 
                                     to="/products">
                                     Shop
@@ -85,7 +85,7 @@ const NavBar = () => {
                                 <a href="#!">Media</a>
                             </li>
                             <li className="main">
-                                <a href="#!">Contact</a>
+                                <a href="/cart">Contact</a>
                             </li>
                         </ul>
                     </nav>

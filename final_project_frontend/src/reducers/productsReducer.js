@@ -1,20 +1,13 @@
 const ProductsReducer = (
     state = { 
-        products: [],
-        loading: false 
+        products: []
     }, action) => {
     switch(action.type) {
-        case 'LOADING_PRODUCTS':
+        //TODO ADMIN CAN ADD PRODUCTS
+        case 'ADD_PRODUCTS': //SHOW_PRODUCTS
             return {
-            ...state,
-            products: [...state.products],
-            loading: true
-            }
-        case 'ADD_PRODUCTS':
-            return {
-            ...state,
-            products: action.products,
-            loading: false
+                ...state,
+                products: action.products
             }
         default:
             return state;
