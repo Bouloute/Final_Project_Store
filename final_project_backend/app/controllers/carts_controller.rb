@@ -12,13 +12,12 @@ class CartsController < ApplicationController
     
     if @cart.save
       render json: @cart
-    else
-      render :new
     end
   end
 
   def show
     @cart = Cart.find(params[:id])
-    render json: @cart
+    
+    render json: @cart.products
   end
 end

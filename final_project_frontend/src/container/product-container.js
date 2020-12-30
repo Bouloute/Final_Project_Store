@@ -3,14 +3,13 @@ import Product from '../components/product'
 
 import {connect} from "react-redux"
 import {loadProducts} from '../actions/products'
-import { addToCart, createCart } from "../actions/carts";
+import { addToCart } from "../actions/carts";
 
 
 class ProductContainer extends Component {
 
     componentDidMount() {
         this.props.loadProducts()
-        this.props.createCart()
     }
     
     renderProducts = () => {
@@ -27,7 +26,8 @@ class ProductContainer extends Component {
 }
 
 const mapsStateToProps = (state) => {
+    //TODO refator to collect only the reducer
     return state
 }
 
-export default connect(mapsStateToProps, {loadProducts, addToCart, createCart})(ProductContainer);
+export default connect(mapsStateToProps, {loadProducts, addToCart})(ProductContainer);

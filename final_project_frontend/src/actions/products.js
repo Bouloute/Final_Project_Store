@@ -1,7 +1,7 @@
 //TODO belongs in actions?
 export const loadProducts = () => {
     return(dispatch) => {
-        fetch('http://localhost:4000/products')//'https://fakestoreapi.com/products')
+        fetch('http://localhost:4000/products')
             .then(response => {
                 return response.json()
             }).then(responseJSON => {

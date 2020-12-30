@@ -1,5 +1,3 @@
-//import axios from 'axios'
-
 const cartReducer = (
     state = { 
         cartItems: []
@@ -8,11 +6,11 @@ const cartReducer = (
             case "CREATE_CART":
 
                 state.id = action.cart_id
+                
                 return state
 
             case "ADD_TO_CART":
 
-            
                 console.log("Cart number: " + state.id)
 
                 let flagAlreadyInCart = false;
@@ -59,7 +57,7 @@ export default cartReducer
 
 const addProductToDBCart = (cartId, productId, count) => {
     
-    if (!cartId) return false
+    //if (!cartId) return false
 
 
     var requestOptions = {
@@ -78,7 +76,6 @@ const addProductToDBCart = (cartId, productId, count) => {
     fetch("http://localhost:4000/carts_products", requestOptions)
         .then(response => response.json())
         .then(result => {
-            debugger
             console.log(result)
         })
         .catch(error => console.log('error', error));

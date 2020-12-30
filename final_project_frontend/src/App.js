@@ -6,11 +6,20 @@ import {
 
 import NavBar from './components/NavBar';
 import ProductContainer from './container/product-container'
+import CartContainer from './container/cart-container'
+
+import { createCart } from "./actions/carts";
 
 import './App.css';
+import { connect } from 'react-redux';
 
 class App extends Component {
-
+  
+  componentDidMount() {
+    this.props.createCart()
+    
+  }
+  
   render() {
     return (
       <Router>
@@ -19,10 +28,10 @@ class App extends Component {
           <Route path='/products' >
             <ProductContainer/>
           </Route>
-          {/*<Route path='/cart' render={routerProps => <Cart cartItems={this.props.cartItems}></Cart>} />*/}
+          <Route path='/carts/:id' component={CartContainer}/>
       </Router>
     );
   }
 }
 
-export default App;
+export default connect(null, {createCart})(App);
