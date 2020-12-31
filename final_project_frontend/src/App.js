@@ -7,6 +7,7 @@ import {
 import NavBar from './components/NavBar';
 import ProductContainer from './containers/product-container'
 import CartContainer from './containers/cart-container'
+import Footer from './components/footer'
 
 import { createCart } from "./actions/cartActions";
 
@@ -23,11 +24,12 @@ class App extends Component {
     return (
       <Router>
           <NavBar />
-          <Route exact path="/" render={() => <div>Home Page</div>} />
+          <Route exact path="/" render={() => <div className="products">Home Page</div>} />
           <Route path='/products' >
             <ProductContainer/>
           </Route>
           <Route path='/carts/:id' component={CartContainer}/>
+          <Footer/>
       </Router>
     );
   }
