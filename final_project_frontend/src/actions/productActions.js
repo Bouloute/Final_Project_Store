@@ -1,4 +1,3 @@
-//TODO belongs in actions?
 export const loadProducts = () => {
     return(dispatch) => {
         fetch('http://localhost:4000/products')

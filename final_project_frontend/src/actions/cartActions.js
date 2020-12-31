@@ -8,7 +8,6 @@ export const addToCart = (id) => {
 
 export const createCart = () => {
 
-
     var requestOptions = {
         method: 'POST',
         redirect: 'follow'

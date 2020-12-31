@@ -1,17 +1,17 @@
 class CartsProductsController < ApplicationController
 
     def index
-        @cartsProduct = CartsProduct.all
+        @carts_product = CartsProduct.all
         
-        render json: @cartsProduct
+        render json: @carts_product
     end
     
     def create
         #CartsProduct.create(carts_product_params)
-        @cartsProduct = CartsProduct.new(carts_product_params)
+        @carts_product = CartsProduct.new(carts_product_params)
     
-        if @cartsProduct.save
-            render json: @cartsProduct
+        if @carts_product.save
+            render json: @carts_product
         end
     end
 
