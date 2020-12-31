@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import productsReducer from './productsReducer';
-import cartsReducer from './cartReducer';
+import productReducers from './productReducers';
+import cartReducers from './cartReducers';
 
 export default combineReducers({
-    productsReducer: productsReducer,
-    cartsReducer: cartsReducer
+    productReducers: productReducers,
+    cartReducers: cartReducers
 });

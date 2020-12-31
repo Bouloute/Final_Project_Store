@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import Product from '../components/product'
 
 import {connect} from "react-redux"
-import {loadProducts} from '../actions/products'
-import { addToCart } from "../actions/carts";
+import {loadProducts} from '../actions/productActions'
+import { addToCart } from "../actions/cartActions";
 
 
 class ProductContainer extends Component {
@@ -13,7 +13,7 @@ class ProductContainer extends Component {
     }
     
     renderProducts = () => {
-        return this.props.productsReducer.products.map(product => <Product product={product} addToCart={this.props.addToCart} cart={this.props.cartsReducer.cartItems}/>)
+        return this.props.productReducers.products.map(product => <Product product={product} addToCart={this.props.addToCart} cart={this.props.cartReducers.cartItems}/>)
     }
 
     render() {

@@ -5,10 +5,10 @@ import {
 } from 'react-router-dom';
 
 import NavBar from './components/NavBar';
-import ProductContainer from './container/product-container'
-import CartContainer from './container/cart-container'
+import ProductContainer from './containers/product-container'
+import CartContainer from './containers/cart-container'
 
-import { createCart } from "./actions/carts";
+import { createCart } from "./actions/cartActions";
 
 import './App.css';
 import { connect } from 'react-redux';
@@ -16,8 +16,7 @@ import { connect } from 'react-redux';
 class App extends Component {
   
   componentDidMount() {
-    this.props.createCart()
-    
+    this.props.createCart() 
   }
   
   render() {

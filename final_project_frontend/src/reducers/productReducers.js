@@ -1,4 +1,4 @@
-const ProductsReducer = (
+const productReducers = (
     state = { 
         products: []
     }, action) => {
@@ -14,4 +14,4 @@ const ProductsReducer = (
         }
     }
 
-export default ProductsReducer;
+export default productReducers;

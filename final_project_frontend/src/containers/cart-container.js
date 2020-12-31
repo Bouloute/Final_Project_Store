@@ -2,37 +2,9 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 //import { useParams } from 'react-router-dom';
 
-import {findCart} from '../actions/carts'
+import {findCart} from '../actions/cartActions'
 
 import Cart from '../components/cart'
-/*
-function CartContainer(props) {
-    let { id } = useParams()
-
-    //find in db cart with id of id
-
-    //display list of products     myCart.products => [{...}]
-    
-    props.findCart(id)
-
-    const cartItems = props.productsReducer.products.map(product => <Cart product={product} />)
-    
-
-    return (
-        <div className="products">
-            {cartItems}
-        </div>
-    );
-}
-
-const mapsStateToProps = (state) => {
-    //TODO refator to collect only the reducer
-    return state
-}
-
-export default connect( mapsStateToProps, {findCart})(CartContainer)
-
-*/
 
 class CartContainer extends Component {
     componentDidMount() {
@@ -40,7 +12,7 @@ class CartContainer extends Component {
     }
 
     renderProducts = () => {
-        return this.props.productsReducer.products.map(product => <Cart product={product} />)
+        return this.props.productReducers.products.map(product => <Cart product={product} />)
     }
     
     render() {
