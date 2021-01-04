@@ -9,7 +9,7 @@ import ProductContainer from './containers/product-container'
 import CartContainer from './containers/cart-container'
 import Footer from './components/footer'
 
-import { createCart } from "./actions/cartActions";
+import { createCart, deleteCart } from "./actions/cartActions";
 
 import './App.css';
 import { connect } from 'react-redux';
@@ -20,13 +20,21 @@ class App extends Component {
     this.props.createCart() 
   }
   
+  componentWillUnmount() {
+    debugger
+    //this.props.deleteCart()
+
+  }
+  
+
   render() {
     return (
       <Router>
           <NavBar />
           <Route exact path="/" render={() => <div className="products">Home Page</div>} />
-          <Route path='/products' >
-            <ProductContainer/>
+          <Route exact path='/products' component={ProductContainer}>
+          </Route>
+          <Route path='/products/:query' component={ProductContainer}>
           </Route>
           <Route path='/carts/:id' component={CartContainer}/>
           <Footer/>
@@ -35,4 +43,4 @@ class App extends Component {
   }
 }
 
-export default connect(null, {createCart})(App);
+export default connect(null, {createCart, deleteCart})(App);

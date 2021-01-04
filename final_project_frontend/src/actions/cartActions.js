@@ -14,11 +14,9 @@ export const createCart = () => {
     };
     
     return(dispatch) => {
-        console.log("CREATING CART!!!!")
         fetch("http://localhost:4000/carts", requestOptions)
             .then(response => response.json())
             .then(result => {
-                //Change url of navbar to /carts/result.id ??
                 dispatch({ type: 'CREATE_CART', cart_id: result.id })
             })
             .catch(error => console.log('error', error));
@@ -41,4 +39,25 @@ export const findCart = (id) => {
             })
             .catch(error => console.log('error', error));
     }
+}
+
+export const deleteCart = () => {
+
+    var requestOptions = {
+        method: 'DELETE',
+        redirect: 'follow'
+    };
+    
+    debugger
+   /* return(dispatch) => {
+        console.log("DELETING CART!!!!")
+        fetch("http://localhost:4000/carts/", requestOptions)
+            .then(response => response.json())
+            .then(result => {
+                dispatch({ type: 'DELETE_CART', cart_id: id })
+            })
+            .catch(error => console.log('error', error));
+
+    } */
+
 }

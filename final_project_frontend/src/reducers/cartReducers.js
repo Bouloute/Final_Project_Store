@@ -11,8 +11,6 @@ const cartReducers = (
 
             case "ADD_TO_CART":
 
-                console.log("Cart number: " + state.id)
-
                 let flagAlreadyInCart = false;
                 
                 // If item is already in cart
@@ -46,6 +44,14 @@ const cartReducers = (
                 return { 
                     ...state
                 };
+        
+            case "DELETE_CART": 
+                console.log("hello")
+
+                return  { 
+                    ...state
+                };
+            
         default:
             return state;
         }

@@ -13,7 +13,6 @@ import rootReducer from './reducers/index';
 
 let store = createStore(rootReducer, applyMiddleware(thunk))
 
-
 ReactDOM.render(
   <Provider store={store}>
     <App />

@@ -17,37 +17,28 @@ class NavBar extends Component {
                         <nav>
                             <ul className="nav-list">
                                 <li className="main">
-                                    <NavLink 
-                                        to="/">
+                                    <NavLink to="/">
                                         Home
                                     </NavLink>
                                 </li>
-                                <li className="main" >
-                                    <NavLink 
-                                        to="/products">
+                                <li className="main" onMouseLeave={dropUp} >
+                                    <NavLink to="/products" onMouseOver={dropDown}>
                                         Shop
                                     </NavLink>
                                     <ul className="nav-dropdown" hidden={true}>
                                         <li>
-                                            <a href="#!">EXTRA VIRGIN OLIVE OILS</a>
+                                            <NavLink to="/products/EVOO">EXTRA VIRGIN OLIVE OILS</NavLink>
                                         </li>
                                         <li>
-                                            <a href="#!">BALSAMIC VINEGARS</a>
+                                            <NavLink to="/products/B">BALSAMIC VINEGARS</NavLink>
                                         </li>
                                         <li>
-                                            <a href="#!">SPECIALTY OILS</a>
-                                        </li>
-                                        <li>
-                                            <a href="#!">FLAVORED OILS</a>
-                                        </li>
-                                        <li>
-                                            <a href="#!">GIFTS</a>
+                                            <NavLink to="/products/OO">FLAVORED OILS</NavLink>
                                         </li>
                                     </ul>
                                 </li>
-                                <li className="main" onFocus={dropDown} onBlur={dropUp}>
-                                    <NavLink 
-                                            to="/">
+                                <li className="main" onMouseLeave={dropUp}>
+                                    <NavLink to="/" onMouseOver={dropDown}>
                                             Recipes
                                     </NavLink>
                                     <ul className="nav-dropdown" hidden={true}>
@@ -78,7 +69,7 @@ class NavBar extends Component {
 
 
 const mapsStateToProps = (state) => {
-    //refator to collect only the reducer
+    //TODO refator to collect only the reducer
     //this.props.reducer.state.id
     return state
 }
@@ -92,5 +83,7 @@ const dropDown = (event) => {
 }
 
 const dropUp = (event) => {
-    event.target.nextElementSibling.hidden = true
+    //TODO: FIX VERY BAD CODE
+    document.getElementsByClassName("nav-dropdown")[0].hidden = true
+    document.getElementsByClassName("nav-dropdown")[1].hidden = true
 } 

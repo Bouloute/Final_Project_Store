@@ -9,7 +9,7 @@ import { addToCart } from "../actions/cartActions";
 class ProductContainer extends Component {
 
     componentDidMount() {
-        this.props.loadProducts()
+        this.props.loadProducts(this.props.match.params)
     }
     
     renderProducts = () => {

@@ -1,6 +1,12 @@
-export const loadProducts = () => {
+export const loadProducts = (params) => {
+    let url = 'http://localhost:4000/products'
+    
+    if (params.query){
+        url += "?cat=" + params.query 
+    }
+    console.log("fetching " + url)
     return(dispatch) => {
-        fetch('http://localhost:4000/products')
+        fetch(url)
             .then(response => {
                 return response.json()
             }).then(responseJSON => {

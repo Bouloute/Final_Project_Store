@@ -20,4 +20,10 @@ class CartsController < ApplicationController
     
     render json: @cart.products
   end
+
+  def destroy
+    @cart = Cart.find(params[:id])
+    @cart.destroy
+
+  end
 end
