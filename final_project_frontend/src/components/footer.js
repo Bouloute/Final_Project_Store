@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 import '../footer.css'
 
@@ -11,11 +12,9 @@ const footer = () => {
                 <div className="col">
                     <h1>Shop</h1>
                     <ul>
-                        <li>EVOO</li>
-                        <li>Balsamic Vinegars</li>
-                        <li>Specialty Oils</li>
-                        <li>Flavored Oils</li>
-                        <li>Gifts</li>
+                        <NavLink to="/products/EVOO"><li>EVOO</li></NavLink>
+                        <NavLink to="/products/B"><li>Balsamic Vinegars</li></NavLink>
+                        <NavLink to="/products/OO"><li>Flavored Oils</li></NavLink>
                     </ul>
                 </div>
                 <div className="col">
@@ -28,7 +27,7 @@ const footer = () => {
                 <div className="col">
                     <h1>Contact</h1>
                     <ul>
-                        <li>Contact us</li>
+                    <NavLink to="/contact"><li>Contact us</li></NavLink>
                     </ul>
                 </div>
                 <div className="col">
