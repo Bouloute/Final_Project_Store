@@ -23,7 +23,7 @@ class Cart extends Component {
                 </div>
                 <div className="inside">
                     <div className="icon">
-                            {/*How many times in cart */}
+                            {/*TODO: How many times in cart */}
                     </div>
                     
                     <div className="contents">

@@ -18,16 +18,15 @@ const cartReducers = (
                     if (itemInCart.id === action.id) {
                         flagAlreadyInCart = true
                         itemInCart.count += 1;
-
-                        console.log("Item is already in cart, finding db link and add 1 to count")
+                        
                         addProductToDBCart(state.id, action.id, itemInCart.count)
                     }
                 });
 
                 // first time in cart & cart created
                 if (!flagAlreadyInCart && !!state.id) {
-                    console.log("Item isnt in cart, adding to cart with count 0")
-                    addProductToDBCart(state.id, action.id, 0)
+                    
+                    addProductToDBCart(state.id, action.id, 1)
                     return { 
                         ...state,
                         cartItems: [
@@ -63,9 +62,6 @@ export default cartReducers
 
 const addProductToDBCart = (cartId, productId, count) => {
     
-    //if (!cartId) return false
-
-
     var requestOptions = {
         method: 'POST',
         redirect: 'follow',

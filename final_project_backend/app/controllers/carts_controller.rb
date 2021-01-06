@@ -18,7 +18,13 @@ class CartsController < ApplicationController
   def show
     @cart = Cart.find(params[:id])
     
+    #myJson = 0
+    #byebug
+
+    #@cart.products.each { |p| myJson += 1 }
+    #byebug
     render json: @cart.products
+    #render :json => @cart, :include => {:carts_products => {:only => [:count, :product_id]}, :products => {:except => :created_at}}
   end
 
   def destroy

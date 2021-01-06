@@ -52,7 +52,9 @@ class NavBar extends Component {
                                 </li>
                                 
                                 <li className="main">
-                                    <a href="#!">Contact</a>
+                                    <NavLink to="/contact">
+                                        Contact
+                                    </NavLink>
                                 </li>
 
                                 <li className="main">

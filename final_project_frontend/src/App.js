@@ -8,6 +8,8 @@ import NavBar from './components/NavBar';
 import ProductContainer from './containers/product-container'
 import CartContainer from './containers/cart-container'
 import Footer from './components/footer'
+import Home from './components/home'
+import Contact from './components/contact'
 
 import { createCart, deleteCart } from "./actions/cartActions";
 
@@ -31,12 +33,13 @@ class App extends Component {
     return (
       <Router>
           <NavBar />
-          <Route exact path="/" render={() => <div className="products">Home Page</div>} />
+          <Route exact path="/" component={Home} />
           <Route exact path='/products' component={ProductContainer}>
           </Route>
           <Route path='/products/:query' component={ProductContainer}>
           </Route>
           <Route path='/carts/:id' component={CartContainer}/>
+          <Route path='/contact' component={Contact}/>
           <Footer/>
       </Router>
     );

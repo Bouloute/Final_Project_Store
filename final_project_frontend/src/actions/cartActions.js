@@ -33,7 +33,7 @@ export const findCart = (id) => {
             .then(response => {
                 return response.json()
             }).then(responseJSON => {
-                //debugger
+                debugger
                 //SHOW_PRODUCTS
                 dispatch({ type: 'ADD_PRODUCTS', products: responseJSON })
             })
