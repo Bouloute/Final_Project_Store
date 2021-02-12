@@ -37,11 +37,20 @@ class CartsProductsController < ApplicationController
         end
     end
 
+    def destroy
+        @carts_product = CartsProduct.find_by(cart_id: params[:cart_id], product_id: params[:product_id])
+
+        #byebug
+        @carts_product.destroy
+        #TODO render cart show with cart id
+    end
+
     private
 
 
     def carts_product_params
-        params.require(:carts_product).permit(
+      #  params.require(:carts_product).permit(
+        params.permit(
             :cart_id,
             :product_id,
             :count

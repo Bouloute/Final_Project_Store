@@ -13,7 +13,7 @@ class ProductContainer extends Component {
     }
     
     renderProducts = () => {
-        return this.props.productReducers.products.map(product => <Product product={product} addToCart={this.props.addToCart} cart={this.props.cartReducers.cartItems}/>)
+        return this.props.productReducers.products.map(product => <Product key={product.id} product={product} addToCart={this.props.addToCart} cart={this.props.cartReducers.cartItems}/>)
     }
 
     render() {

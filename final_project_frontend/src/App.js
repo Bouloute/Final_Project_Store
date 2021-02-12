@@ -23,9 +23,9 @@ class App extends Component {
   }
   
   componentWillUnmount() {
-    debugger
+    //debugger
+    console.log("App will unmount")
     //this.props.deleteCart()
-
   }
   
 

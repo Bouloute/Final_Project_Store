@@ -26,38 +26,39 @@ export const createCart = () => {
 }
 
 export const findCart = (id) => {  
-    console.log("finding cart " + id)
+
     return(dispatch) => {
-        console.log("sending request")
-        fetch('http://localhost:4000/carts/' + id )
+        fetch('http://localhost:4000/carts/' + id)
             .then(response => {
-                return response.json()
+                if( response.ok){ //404 or 500
+                    console.log("NO BUENO")
+                    return response.json()
+                }
+                else {
+                    throw new Error(response.status + "No cart with this id exists in the Database")
+                }
             }).then(responseJSON => {
-                debugger
                 //SHOW_PRODUCTS
-                dispatch({ type: 'ADD_PRODUCTS', products: responseJSON })
+                //TODO products => items?
+                //dispatch({ type: 'ADD_PRODUCTS', products: responseJSON })
+                console.log("LOOK AT ME " + responseJSON)
+                dispatch({ type: 'SHOW_CART', products: responseJSON })
             })
-            .catch(error => console.log('error', error));
+            .catch(error => {console.log("error", error)});
     }
 }
 
-export const deleteCart = () => {
+export const deleteCart = (id) => {
+    return{
+        type: 'DELETE_CART',
+        id: id
+    }
+}
 
-    var requestOptions = {
-        method: 'DELETE',
-        redirect: 'follow'
-    };
-    
-    debugger
-   /* return(dispatch) => {
-        console.log("DELETING CART!!!!")
-        fetch("http://localhost:4000/carts/", requestOptions)
-            .then(response => response.json())
-            .then(result => {
-                dispatch({ type: 'DELETE_CART', cart_id: id })
-            })
-            .catch(error => console.log('error', error));
-
-    } */
-
+export const removeProductFromCart = (product_id, cart_id) => {
+    return{
+        type: 'REMOVE_PRODUCT_FROM_CART',
+        product_id: product_id,
+        cart_id: cart_id
+    }
 }

@@ -4,7 +4,7 @@ export const loadProducts = (params) => {
     if (params.query){
         url += "?cat=" + params.query 
     }
-    console.log("fetching " + url)
+
     return(dispatch) => {
         fetch(url)
             .then(response => {

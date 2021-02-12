@@ -23,7 +23,7 @@ class CartsController < ApplicationController
 
     #@cart.products.each { |p| myJson += 1 }
     #byebug
-    render json: @cart.products
+    render json: @cart.carts_products.to_json(include: [:product])
     #render :json => @cart, :include => {:carts_products => {:only => [:count, :product_id]}, :products => {:except => :created_at}}
   end
 

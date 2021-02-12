@@ -9,6 +9,7 @@ const productReducers = (
                 ...state,
                 products: action.products
             }
+
         default:
             return state;
         }
