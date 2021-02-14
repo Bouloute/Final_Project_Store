@@ -21,7 +21,7 @@ class Cart extends Component {
                         <div className="left">
                             <div className="details">
                                 <h1>{product.name}</h1>
-                                <p>${product.price}</p>
+                                <p>${product.price * this.props.product.count}</p>
                             </div>
                             <button className="remove" onClick={() => {this.removeProductFromCart(product.id, this.props.product.cart_id)}}> Remove from cart</button>
                         </div>
