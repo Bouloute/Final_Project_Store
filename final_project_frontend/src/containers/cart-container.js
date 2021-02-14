@@ -12,13 +12,8 @@ class CartContainer extends Component {
         this.props.findCart(parseInt(this.props.match.params.id))
     }
 
-    componentWillUpdate() {
-        this.props.findCart(parseInt(this.props.match.params.id))
-    }
-
     renderProducts = () => {
         if (this.props.cartReducers.cartItems.length !== 0) {
-            console.log(this.props.cartReducers.cartItems)
             return this.props.cartReducers.cartItems.map(product => <Cart key={product.id} product={product} removeProductFromCart={this.props.removeProductFromCart} />)
         }
     }

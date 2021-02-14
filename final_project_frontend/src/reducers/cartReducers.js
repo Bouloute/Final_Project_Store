@@ -6,7 +6,6 @@ const cartReducers = (
     }, action) => {
         switch (action.type) {
             case "CREATE_CART":
-
                 state.id = action.cart_id
                 
                 return state
