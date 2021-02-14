@@ -10,9 +10,13 @@ class CartsProductsController < ApplicationController
         #CartsProduct.create(carts_product_params)
         @carts_product = CartsProduct.new(carts_product_params)
         #byebug
+
+        product_already_in_cart = CartsProduct.where(cart_id: params[:cart_id], product_id: params[:product_id])
     
-        if CartsProduct.where(cart_id: params[:cart_id], product_id: params[:product_id]).exists?
-            redirect_to update
+        if product_already_in_cart.exists?
+            product_already_in_cart.update(carts_product_params)
+            
+            render json: product_already_in_cart
         else @carts_product.save
             render json: @carts_product
         end

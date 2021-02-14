@@ -13,9 +13,10 @@ class CartContainer extends Component {
     }
 
     renderProducts = () => {
-        //debugger
-        if (this.props.cartReducers.cartItems.length !== 0 && !!this.props.cartReducers.cartItems[0].product_id) {
-            return this.props.cartReducers.cartItems.map(product => <Cart key={product.id} product={product} removeProductFromCart={this.props.removeProductFromCart} />)
+        if (this.props.cartReducers.cartItems.length !== 0 ) {
+            if (!!this.props.cartReducers.cartItems[0].product_id){            
+                return this.props.cartReducers.cartItems.map(product => <Cart key={product.id} product={product} removeProductFromCart={this.props.removeProductFromCart} />)
+            }
         }
     }
     

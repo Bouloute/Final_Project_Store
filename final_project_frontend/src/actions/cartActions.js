@@ -31,7 +31,6 @@ export const findCart = (id) => {
         fetch('http://localhost:4000/carts/' + id)
             .then(response => {
                 if( response.ok){ //404 or 500
-                    console.log("NO BUENO")
                     return response.json()
                 }
                 else {
@@ -41,7 +40,6 @@ export const findCart = (id) => {
                 //SHOW_PRODUCTS
                 //TODO products => items?
                 //dispatch({ type: 'ADD_PRODUCTS', products: responseJSON })
-                console.log("LOOK AT ME " + responseJSON)
                 dispatch({ type: 'SHOW_CART', products: responseJSON })
             })
             .catch(error => {console.log("error", error)});

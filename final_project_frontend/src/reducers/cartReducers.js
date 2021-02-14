@@ -39,6 +39,7 @@ const cartReducers = (
                         cartItems: [
                             ...state.cartItems,
                             {
+                                //TODO should not look like this
                                 id: action.id,
                                 count: 1
                             }
@@ -48,6 +49,7 @@ const cartReducers = (
 
 
                 return { 
+                    //TODO double check state format
                     ...state
                 };
         
@@ -89,7 +91,7 @@ const addProductToDBCart = (cartId, productId, count) => {
 
     fetch("http://localhost:4000/carts_products", requestOptions)
         .then(response => response.json())
-        //.catch(error => console.log('error', error));
+        .catch(error => console.log('error', error));
 }
 
 const deleteCart = (id) => {
@@ -122,7 +124,6 @@ const removeProductFromCart = (productId, cartId) => {
     fetch("http://localhost:4000/carts_products/" + cartId + "/" + productId, requestOptions)
         .then(response => {
             response.json()
-            //TODO reupload page?
         })
         .catch(error => console.log('error', error));
 
