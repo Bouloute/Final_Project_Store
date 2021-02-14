@@ -13,7 +13,8 @@ class CartContainer extends Component {
     }
 
     renderProducts = () => {
-        if (this.props.cartReducers.cartItems.length !== 0) {
+        //debugger
+        if (this.props.cartReducers.cartItems.length !== 0 && !!this.props.cartReducers.cartItems[0].product_id) {
             return this.props.cartReducers.cartItems.map(product => <Cart key={product.id} product={product} removeProductFromCart={this.props.removeProductFromCart} />)
         }
     }
