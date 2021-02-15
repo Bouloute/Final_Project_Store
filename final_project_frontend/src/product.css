@@ -199,3 +199,9 @@
 .wrapper .inside .contents p {
     font-size: 13px;
 }
+
+.products.homepage {
+    height: 500px;
+    width: 850px;
+    padding: 50px;
+}

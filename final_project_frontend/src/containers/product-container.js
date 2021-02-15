@@ -26,7 +26,6 @@ class ProductContainer extends Component {
 }
 
 const mapsStateToProps = (state) => {
-    //TODO refator to collect only the reducer
     return state
 }
 

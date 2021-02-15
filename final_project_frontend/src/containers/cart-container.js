@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-//import { useParams } from 'react-router-dom';
 
 import {findCart, deleteCart, removeProductFromCart} from '../actions/cartActions'
 
@@ -13,9 +12,9 @@ class CartContainer extends Component {
     }
 
     renderProducts = () => {
-        if (this.props.cartReducers.cartItems.length !== 0 ) {
-            if (!!this.props.cartReducers.cartItems[0].product_id){            
-                return this.props.cartReducers.cartItems.map(product => <Cart key={product.id} product={product} removeProductFromCart={this.props.removeProductFromCart} />)
+        if (this.props.cartItems.length !== 0 ) {
+            if (!!this.props.cartItems[0].product_id){            
+                return this.props.cartItems.map(product => <Cart key={product.id} cartItem={product} removeProductFromCart={this.props.removeProductFromCart} />)
             }
         }
     }
@@ -31,7 +30,6 @@ class CartContainer extends Component {
 }
 
 const mapsStateToProps = (state) => {
-    //TODO refator to collect only the reducer
-    return state
+    return state.cartReducers
 }
 export default connect( mapsStateToProps, {findCart, deleteCart, removeProductFromCart})(CartContainer)

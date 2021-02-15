@@ -6,6 +6,7 @@ import { NavLink } from 'react-router-dom';
 class NavBar extends Component {
     
     render() {
+        //debugger
         return (
             <div className="NavBar">
                 <div className="brand">
@@ -58,7 +59,7 @@ class NavBar extends Component {
                                 </li>
 
                                 <li className="main">
-                                    {!!this.props.cartReducers.id ? <NavLink to={"/carts/" + this.props.cartReducers.id}>Cart</NavLink> : <NavLink to="/carts">Cart</NavLink>}
+                                    {!!this.props.cartId ? <NavLink to={"/carts/" + this.props.cartId}>Cart</NavLink> : <NavLink to="/carts">Cart</NavLink>}
                                 </li>
                             </ul>
                         </nav>
@@ -72,8 +73,8 @@ class NavBar extends Component {
 
 const mapsStateToProps = (state) => {
     //TODO refator to collect only the reducer
-    //this.props.reducer.state.id
-    return state
+    //debugger
+    return state.cartReducers
 }
 
 

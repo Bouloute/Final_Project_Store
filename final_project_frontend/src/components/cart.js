@@ -9,8 +9,7 @@ class Cart extends Component {
     }
 
     render() {
-        //TODO: whats this horror
-        const product = this.props.product.product
+        const product = this.props.cartItem.product
         return (
             <div className="wrapper" id={product.id}>
                 <div className="container">
@@ -21,15 +20,15 @@ class Cart extends Component {
                         <div className="left">
                             <div className="details">
                                 <h1>{product.name}</h1>
-                                <p>${product.price * this.props.product.count}</p>
+                                <p>${product.price * this.props.cartItem.count}</p>
                             </div>
-                            <button className="remove" onClick={() => {this.removeProductFromCart(product.id, this.props.product.cart_id)}}> Remove from cart</button>
+                            <button className="remove" onClick={() => {this.removeProductFromCart(product.id, this.props.cartItem.cart_id)}}> Remove from cart</button>
                         </div>
                     </div>
                 </div>
                 <div className="inside">
                     <div className="icon">
-                            {this.props.product.count}
+                            {this.props.cartItem.count}
                     </div>
                     
                     <div className="contents">

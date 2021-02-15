@@ -5,16 +5,16 @@ const cartReducers = (
         cartItems: []
     }, action) => {
         switch (action.type) {
-            case "CREATE_CART":
-                state.id = action.cart_id
+            case "CREATE_CART"://Put in session
+            //TODO pick a case
+                state.cartId = action.cart_id
                 
                 return state
 
             case "SHOW_CART":
-                //debugger
                 return {
                     ...state,
-                    cartItems: action.products
+                    cartItems: action.cartItems
                 }
             case "ADD_TO_CART":
 
@@ -22,40 +22,37 @@ const cartReducers = (
                 
                 // If item is already in cart
                 state.cartItems.forEach((itemInCart) => {
-                    if (itemInCart.id === action.id) {
+                    if (itemInCart.cartId === action.id) {
                         flagAlreadyInCart = true
                         itemInCart.count += 1;
                         
-                        addProductToDBCart(state.id, action.id, itemInCart.count)
+                        addProductToDBCart(state.cartId, action.id, itemInCart.count)
                     }
                 });
 
                 // first time in cart & cart created
-                if (!flagAlreadyInCart && !!state.id) {
+                if (!flagAlreadyInCart && !!state.cartId) {
+                    addProductToDBCart(state.cartId, action.id, 1)
                     
-                    addProductToDBCart(state.id, action.id, 1)
                     return { 
                         ...state,
                         cartItems: [
                             ...state.cartItems,
                             {
-                                //TODO should not look like this
-                                id: action.id,
+                                cartId: action.id,
                                 count: 1
                             }
                         ] 
                     }
                 }
 
-
                 return { 
-                    //TODO double check state format
                     ...state
                 };
         
             case "DELETE_CART": 
-            //TODO Action.id??
-                deleteCart(state.id)
+            //TODO Action.id?? session cart id??
+                deleteCart(state.cartId)
                 return  { 
                     ...state
                 };
@@ -109,6 +106,7 @@ const deleteCart = (id) => {
         .then(result => {
             //dispatch({ type: 'DELETE_CART', cart_id: id })
             console.log("deleted")
+            //TODO JS-> empty cart + message + redirect?
         })
         .catch(error => console.log('error', error));
 

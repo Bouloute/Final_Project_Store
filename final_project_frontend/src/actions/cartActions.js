@@ -37,10 +37,8 @@ export const findCart = (id) => {
                     throw new Error(response.status + "No cart with this id exists in the Database")
                 }
             }).then(responseJSON => {
-                //SHOW_PRODUCTS
-                //TODO products => items?
-                //dispatch({ type: 'ADD_PRODUCTS', products: responseJSON })
-                dispatch({ type: 'SHOW_CART', products: responseJSON })
+                //SHOW_CART_ITEMS
+                dispatch({ type: 'SHOW_CART', cartItems: responseJSON })
             })
             .catch(error => {console.log("error", error)});
     }

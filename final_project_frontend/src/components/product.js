@@ -5,6 +5,7 @@ import '../product.css';
 class product extends Component {
     
     render() {
+        //debugger
         return (
             <div className="wrapper">
                 <div className="container">
@@ -23,7 +24,7 @@ class product extends Component {
                 </div>
                 <div className="inside">
                     <div className="icon">
-                            {!!(this.props.cart.find(cartItem => cartItem.id === this.props.product.id) )? this.props.cart.find(cartItem => cartItem.id === this.props.product.id).count : 0 }
+                            {!!(this.props.cart.find(cartItem => cartItem.cartId === this.props.product.id) )? this.props.cart.find(cartItem => cartItem.cartId === this.props.product.id).count : 0 }
                             
                     </div>
                     
