@@ -18,7 +18,7 @@ class ProductContainer extends Component {
 
     render() {
         return (
-            <div className="products">
+            <div className="page-content">
                 {this.renderProducts()}
             </div>
         );

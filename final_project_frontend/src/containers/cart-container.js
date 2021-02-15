@@ -21,7 +21,7 @@ class CartContainer extends Component {
     
     render() {
         return (
-            <div className="products">
+            <div className="page-content">
                 <button onClick={this.props.deleteCart}>Erase cart</button>
                 {this.renderProducts()}
             </div>

@@ -2,8 +2,8 @@ import React from 'react';
 
 const home = () => {
     return (
-        <div className="products">
-            <p className="products homepage">
+        <div className="page-content">
+            <p className="page-content homepage">
             <br/><br/><br/>
                 Welcome to my Portfolio project<br/>
                 Here's a generic store website<br/>

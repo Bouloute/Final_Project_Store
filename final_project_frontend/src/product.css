@@ -1,5 +1,6 @@
-.products {
+.page-content {
     width: 950px;
+    min-height: 900px;
     margin: 0 auto;
     background-color: white;
 }
@@ -7,8 +8,9 @@
     width: 280px;
     height: 385px;
     background: white;
-    margin: auto;
+    margin-left: 28px;
     position: relative;
+    float: left;
     overflow: hidden;
     border-radius: 10px 10px 10px 10px;
     box-shadow: 0;
@@ -33,7 +35,6 @@
     background-size: 100%;
 }
 .wrapper .container .bottom {
-    width: 200%;
     height: 20%;
     transition: transform 0.5s;
 }
@@ -51,10 +52,8 @@
 }
 .wrapper .container .bottom .left {
     height: 100%;
-    width: 50%;
     background: #f4f4f4;
     position: relative;
-    float: left;
 }
 .wrapper .container .bottom .left .details {
     padding: 20px;
@@ -149,19 +148,19 @@
 .wrapper .inside {
     z-index: 9;
     background: #92879b;
-    width: 140px;
-    height: 140px;
+    width: 70px;
+    height: 70px;
     position: absolute;
-    top: -70px;
-    right: -70px;
-    border-radius: 0px 0px 200px 200px;
+    top: 0px;
+    right: 0px;
+    border-radius: 0px 0px 0px 200px;
     transition: all 0.5s, border-radius 2s, top 1s;
     overflow: hidden;
 }
 .wrapper .inside .icon {
     position: absolute;
-    right: 85px;
-    top: 85px;
+    right: 15px;
+    top: 15px;
     color: white;
     opacity: 1;
 }
@@ -200,8 +199,9 @@
     font-size: 13px;
 }
 
-.products.homepage {
+.page-content.homepage {
     height: 500px;
     width: 850px;
     padding: 50px;
+    min-height: 900px;
 }
