@@ -20,7 +20,6 @@ body {
     margin-bottom: 50px;
     font: 300 60px 'Oswald', sans-serif;
     letter-spacing: 6px;
-    color: #fff;
     margin-bottom: 25px;
   }
   
@@ -48,7 +47,7 @@ body {
   
   .form-control, textarea {
     max-width: 400px;
-    color: #fff;
+    color: black;
     letter-spacing: 1px;
   }
   
@@ -95,7 +94,7 @@ body {
   .contact-text {
     font: 300 18px 'Lato', sans-serif;
     letter-spacing: 1.9px;
-    color: #bbb;
+    color: black;
   }
   
   .place {
