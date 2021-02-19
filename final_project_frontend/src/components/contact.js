@@ -22,23 +22,31 @@ class Contact extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        //TODO make sure no fields are empty
-        emailjs.send("service_pohw0jg","template_juveuam",
-        {
-            from_name: this.state.name,
-            message: this.state.message,
-            reply_to: this.state.email,
-            }).then((result) => {
-                alert("Email sent")
-            }, (error) => {
-                alert("Error encountered, email not sent")
-            });
-            
-        this.setState({
-            name: "",
-            email: "",
-            message: ""
-        }) 
+        
+        const aFieldIsEmpty = Object.values(this.state).includes("")
+        if (aFieldIsEmpty){
+            alert("Please fill up all fields before sending the email")
+        }
+        else {
+            emailjs.send("service_pohw0jg","template_juveuam",
+            {
+                from_name: this.state.name,
+                message: this.state.message,
+                reply_to: this.state.email,
+                }).then((result) => {
+                    alert("Email sent")
+                }, (error) => {
+                    alert("Error encountered, email not sent")
+                });
+                
+            alert("Email sent")
+            this.setState({
+                name: "",
+                email: "",
+                message: ""
+            }) 
+        }
+        
     }
 
     render() {
@@ -60,11 +68,11 @@ class Contact extends Component {
 
                         <div className="form-group">
                             <div className="col-sm-12">
-                            <input type="email" className="form-control" id="email" placeholder="EMAIL" name="email" onChange={this.handleChange}/>
+                            <input type="email" className="form-control" id="email" placeholder="EMAIL" name="email" value={this.state.email} onChange={this.handleChange}/>
                             </div>
                         </div>
 
-                        <textarea className="form-control" rows="10" placeholder="MESSAGE" name="message" onChange={this.handleChange}></textarea>
+                        <textarea className="form-control" rows="10" placeholder="MESSAGE" name="message" value={this.state.message} onChange={this.handleChange}></textarea>
                         
                         <button className="btn btn-primary send-button" id="submit" type="submit" value="SEND">
                             <div className="button">
