@@ -27,13 +27,13 @@ const footer = () => {
                 <div className="col">
                     <h1>Contact</h1>
                     <ul>
-                    <NavLink to="/contact"><li>Contact us</li></NavLink>
+                        <NavLink to="/contact"><li>Contact us</li></NavLink>
                     </ul>
                 </div>
                 <div className="col">
                     <h1>Social</h1>
                     <ul>
-                        <li>Facebook</li>
+                        <a href="https://facebook.com"><li>Facebook</li></a>
                     </ul>
                 </div>
         </div>
