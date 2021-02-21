@@ -36,7 +36,7 @@ nav ul {
     padding: 0;
 }
 nav ul .main {
-    margin-top: 170px;
+    margin-top: 90px;
     position: relative;
 }
 
@@ -153,4 +153,16 @@ article {
     max-width: 1000px;
     margin: 0 auto;
     padding: 10px;
+}
+
+.login {
+    width: 50px;
+    text-align: center;
+    padding: 0 10px;
+    line-height: 70px;
+    background: #9fb12c;
+    color: #fff;
+    margin-top: 10px;
+    border-radius: 35px;
+    margin-left: 404px;
 }
