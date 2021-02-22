@@ -15,7 +15,10 @@ class NavBar extends Component {
                 <section className="navigation">
                     <div className="nav-container">
                         <nav>
-                            <div className="login">J</div>
+                            
+                                <NavLink to="/login">
+                                    <div className="login">J</div>
+                                </NavLink>
 
                             <ul className="nav-list">
                                 <li className="main">

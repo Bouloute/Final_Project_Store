@@ -10,6 +10,7 @@ import CartContainer from './containers/cart-container'
 import Footer from './components/footer'
 import Home from './components/home'
 import Contact from './components/contact'
+import Login from './components/login'
 
 import { createCart, deleteCart } from "./actions/cartActions";
 
@@ -22,13 +23,6 @@ class App extends Component {
     this.props.createCart() 
   }
   
-  componentWillUnmount() {
-    //debugger
-    console.log("App will unmount")
-    //this.props.deleteCart()
-  }
-  
-
   render() {
     return (
       <Router>
@@ -40,6 +34,7 @@ class App extends Component {
           </Route>
           <Route path='/carts/:id' component={CartContainer}/>
           <Route path='/contact' component={Contact}/>
+          <Route path='/login' component={Login}/>
           <Footer/>
       </Router>
     );

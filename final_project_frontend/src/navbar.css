@@ -166,3 +166,8 @@ article {
     border-radius: 35px;
     margin-left: 404px;
 }
+
+a {
+    text-decoration: none;
+    color: #fff
+}

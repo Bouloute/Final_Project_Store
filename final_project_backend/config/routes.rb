@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :products
   resources :carts
   resources :carts_products
+  resources :users
   # TODO only routes used
 
 
