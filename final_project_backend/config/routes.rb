@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :carts
   resources :carts_products
   resources :users
+  resources :sessions
   # TODO only routes used
 
 
