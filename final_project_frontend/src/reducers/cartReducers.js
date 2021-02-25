@@ -8,7 +8,8 @@ const cartReducers = (
             case "CREATE_CART"://Put in session
             //TODO pick a case
                 state.cartId = action.cart_id
-                
+                sessionStorage.setItem('cart_id', action.cart_id);
+            
                 return state
 
             case "SHOW_CART":

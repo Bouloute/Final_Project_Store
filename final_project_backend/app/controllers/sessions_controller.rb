@@ -19,7 +19,8 @@ class SessionsController < ApplicationController
             #end
         end
         #session[:user_id] = @user.id
-        render json: ['token': @user.id]
+        #byebug
+        render json: {'token': @user.id}
     end
     
     def destroy

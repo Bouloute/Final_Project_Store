@@ -4,9 +4,11 @@ import { NavLink } from 'react-router-dom';
 
 
 class NavBar extends Component {
-    
+    loginButtonText = () => {
+        return ((!this.props.getToken())?"Login":"D")
+    }
+
     render() {
-        //debugger
         return (
             <div className="NavBar">
                 <div className="brand">
@@ -17,7 +19,7 @@ class NavBar extends Component {
                         <nav>
                             
                                 <NavLink to="/login">
-                                    <div className="login">J</div>
+                                    <div className="login">{this.loginButtonText()}</div>
                                 </NavLink>
 
                             <ul className="nav-list">

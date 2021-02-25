@@ -35,11 +35,10 @@ class login extends Component {
             })
         })
         .then(data => {
-            data.json()
-            debugger
+            return data.json()
         })
         .then(result => {
-            debugger
+            this.props.setToken(result)
         })
     }
 
