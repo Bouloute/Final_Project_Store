@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import './index.css';
-import './navbar.css';//TODO ??
 
 import App from './App';
 

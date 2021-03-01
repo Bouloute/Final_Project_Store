@@ -8,8 +8,7 @@ import Cart from '../components/cart'
 class CartContainer extends Component {
     
     componentDidMount() {
-        //TODO find cart from session
-        this.props.findCart(parseInt(this.props.match.params.id))
+        this.props.findCart(sessionStorage.cart_id)
     }
 
     renderProducts = () => {

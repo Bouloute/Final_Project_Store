@@ -4,9 +4,19 @@ import { NavLink } from 'react-router-dom';
 
 
 class NavBar extends Component {
-    loginButtonText = () => {
-        return ((!this.props.getToken())?"Login":"D")
+    constructor(props) {
+        super(props);
+        
+        //TODO put state in props to update
+        let myText = !sessionStorage.user_name?"Login":sessionStorage.user_name[0].toUpperCase();
+        this.state = {
+            loginText: myText
+        }
     }
+    
+    /*loginButtonText = () => {
+        return ((!this.props.getToken())?"Login":sessionStorage.user_name[0].toUpperCase())
+    }*/
 
     render() {
         return (
@@ -17,10 +27,10 @@ class NavBar extends Component {
                 <section className="navigation">
                     <div className="nav-container">
                         <nav>
-                            
-                                <NavLink to="/login">
-                                    <div className="login">{this.loginButtonText()}</div>
-                                </NavLink>
+                        
+                            <NavLink to="/login">
+                                <div className="login">{this.state.loginText}</div>
+                            </NavLink>
 
                             <ul className="nav-list">
                                 <li className="main">
@@ -78,8 +88,6 @@ class NavBar extends Component {
 
 
 const mapsStateToProps = (state) => {
-    //TODO refator to collect only the reducer
-    //debugger
     return state.cartReducers
 }
 

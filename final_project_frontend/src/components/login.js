@@ -22,15 +22,15 @@ class login extends Component {
             email: "",
             password: ""
         })
-        //TODO /login not sessions
-        fetch('http://localhost:4000/sessions', {
+        
+        fetch('http://localhost:4000/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
                 name: this.state.name,
-               // "email": this.state.email,
+               // "email": this.state.email, 
                 password: this.state.password
             })
         })
@@ -38,11 +38,13 @@ class login extends Component {
             return data.json()
         })
         .then(result => {
-            this.props.setToken(result)
+            this.props.setSession(result)
+            window.location.reload() //TODO this is temporary fix. needs to update state/props instead
         })
     }
 
     render() {
+        // TODO Sign up
         return (
             <div className="page-content">
                 <div className="page-content homepage">

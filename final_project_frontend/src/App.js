@@ -15,12 +15,15 @@ import Login from './components/login'
 import { createCart, deleteCart } from "./actions/cartActions";
 
 import './App.css';
+import './navbar.css';
 import { connect } from 'react-redux';
 
 
-function setToken(userToken) {
-  sessionStorage.setItem('token', JSON.stringify(userToken));
-  console.log("Session token is now set at " + sessionStorage.token)
+function setSession(userToken) {
+
+  Object.entries(userToken).map(item => sessionStorage.setItem(item[0], item[1]))
+
+  console.log("Session is now set at " + sessionStorage)
 }
 
 function getToken() {
@@ -33,7 +36,7 @@ function getToken() {
 class App extends Component {
   
   componentDidMount() {
-    const token = getToken();
+    //const token = getToken();
 
     this.props.createCart() 
   }
@@ -47,7 +50,7 @@ class App extends Component {
           <Route path='/products/:query' component={ProductContainer}/>
           <Route path='/carts/:id' component={CartContainer}/>
           <Route path='/contact' component={Contact}/>
-          <Route path='/login' /*component={Login}*/><Login setToken={setToken}/></Route>
+          <Route path='/login' /*component={Login}*/><Login setSession={setSession}/></Route>
           <Footer/>
       </Router>
     );
