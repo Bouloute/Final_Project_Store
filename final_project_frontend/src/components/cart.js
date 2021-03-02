@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import '../product.css';
-
+//Cart product
 class Cart extends Component {
     removeProductFromCart = (product_id, cart_id) => {
         this.props.removeProductFromCart(product_id, cart_id)

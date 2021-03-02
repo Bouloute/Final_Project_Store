@@ -12,10 +12,9 @@ class CartContainer extends Component {
     }
 
     renderProducts = () => {
+        
         if (this.props.cartItems.length !== 0 ) {
-            if (!!this.props.cartItems[0].product_id){            
-                return this.props.cartItems.map(product => <Cart key={product.id} cartItem={product} removeProductFromCart={this.props.removeProductFromCart} />)
-            }
+            return this.props.cartItems.filter(product => !!product.product_id).map(product => <Cart key={product.id} cartItem={product} removeProductFromCart={this.props.removeProductFromCart} />)
         }
     }
     

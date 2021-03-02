@@ -5,7 +5,7 @@ const cartReducers = (
         cartItems: []
     }, action) => {
         switch (action.type) {
-            case "CREATE_CART"://Put in session
+            case "CREATE_CART"://TODO is creating when it shouldnt
             //TODO pick a case
                 state.cartId = action.cart_id
                 sessionStorage.setItem('cart_id', action.cart_id);
