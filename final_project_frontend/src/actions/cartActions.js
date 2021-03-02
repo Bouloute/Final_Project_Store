@@ -26,7 +26,7 @@ export const createCart = () => {
 }
 
 export const findCart = (id) => {  
-
+    console.log(id)
     return(dispatch) => {
         fetch('http://localhost:4000/carts/' + id)
             .then(response => {

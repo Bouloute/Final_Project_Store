@@ -45,6 +45,7 @@ class login extends Component {
 
     render() {
         // TODO Sign up
+        //TODO Logout
         return (
             <div className="page-content">
                 <div className="page-content homepage">

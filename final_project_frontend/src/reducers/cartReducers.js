@@ -23,23 +23,25 @@ const cartReducers = (
                 
                 // If item is already in cart
                 state.cartItems.forEach((itemInCart) => {
+                    
                     if (itemInCart.cartId === action.id) {
                         flagAlreadyInCart = true
                         itemInCart.count += 1;
                         
-                        addProductToDBCart(state.cartId, action.id, itemInCart.count)
+                        addProductToDBCart(sessionStorage.cart_id, action.id, itemInCart.count)
                     }
                 });
 
                 // first time in cart & cart created
-                if (!flagAlreadyInCart && !!state.cartId) {
-                    addProductToDBCart(state.cartId, action.id, 1)
-                    
+                if (!flagAlreadyInCart && !!sessionStorage.cart_id) {
+                    addProductToDBCart(sessionStorage.cart_id, action.id, 1)
+
                     return { 
                         ...state,
                         cartItems: [
                             ...state.cartItems,
                             {
+                                //TODO cartid = product id? what ?????
                                 cartId: action.id,
                                 count: 1
                             }

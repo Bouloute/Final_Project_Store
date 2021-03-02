@@ -75,7 +75,7 @@ class NavBar extends Component {
                                 </li>
 
                                 <li className="main">
-                                    {!!this.props.cartId ? <NavLink to={"/carts/" + this.props.cartId}>Cart</NavLink> : <NavLink to="/carts">Cart</NavLink>}
+                                    {!!sessionStorage.cart_id ? <NavLink to={"/carts/" + sessionStorage.cart_id}>Cart</NavLink> : <NavLink to="/carts">Cart</NavLink>}
                                 </li>
                             </ul>
                         </nav>

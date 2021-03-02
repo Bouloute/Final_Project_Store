@@ -37,8 +37,12 @@ class App extends Component {
   
   componentDidMount() {
     //const token = getToken();
-
-    this.props.createCart() 
+    
+    //If cart in session, no need to create cart
+    if (!sessionStorage.cart_id){
+      this.props.createCart()
+    }
+    console.log(sessionStorage.cart_id)
   }
   
   render() {
